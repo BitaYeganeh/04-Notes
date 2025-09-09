@@ -1,6 +1,7 @@
-const App = (props) => {
-  const {notes} = props
-  
+import Note from './components/Note'
+
+const App = ({notes}) => {
+
   const result = notes.map(note => note.id)
   console.log(result)
 
@@ -25,6 +26,13 @@ const App = (props) => {
         )}
       </ul>
       <hr />
+      <h1>Notes - omaan tiedostoon tallennetun komponentin Note avulla</h1>
+      <ul>
+        {notes.map(note =>
+         <Note key = {note.id} note={note}/>
+        )}
+      </ul>
+
     </>
   )
 
